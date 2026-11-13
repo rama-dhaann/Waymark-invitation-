@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+  <title>WAYMARK Invitation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">WAYMARK<span>INVITATION</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Buka menu">☰</button>
+    <nav id="nav">
+      <a href="#templates">Template</a>
+      <a href="#cara">Cara pesan</a>
+      <a href="#order" class="nav-cta">Buat undangan</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">UNDANGAN DIGITAL • MUDAH • PRAKTIS</p>
+        <h1>Bagikan momen spesial dengan cara yang lebih berkesan.</h1>
+        <p class="hero-desc">Pilih desain, isi detail acara, lalu dapatkan tautan undangan digital yang siap dibagikan.</p>
+        <a class="btn btn-dark" href="#templates">Lihat template <span>↗</span></a>
+        <div class="hero-note"><span class="dot"></span> Cocok untuk berbagai jenis acara</div>
+      </div>
+      <div class="hero-art">
+        <div class="mock-card back-card"></div>
+        <div class="mock-card front-card">
+          <div class="mock-kicker">YOU ARE INVITED</div>
+          <div class="mock-flower">✳</div>
+          <div class="mock-title">A Special<br>Celebration</div>
+          <div class="mock-line"></div>
+          <div class="mock-date">SATURDAY · 18.00 WITA</div>
+        </div>
+        <span class="art-caption">YOUR MOMENT, YOUR STORY.</span>
+      </div>
+    </section>
+
+    <section class="section" id="templates">
+      <div class="section-heading">
+        <div><p class="eyebrow">PILIH DESAIN</p><h2>Template pilihan</h2></div>
+        <p>Semua template bisa disesuaikan dengan detail acaramu.</p>
+      </div>
+      <div class="template-grid" id="templateGrid"></div>
+    </section>
+
+    <section class="steps-section" id="cara">
+      <p class="eyebrow">SIMPLE PROCESS</p>
+      <h2>Tiga langkah menuju undanganmu.</h2>
+      <div class="steps">
+        <article><span>01</span><h3>Pilih template</h3><p>Tentukan desain yang paling cocok untuk acaramu.</p></article>
+        <article><span>02</span><h3>Isi detail acara</h3><p>Masukkan nama, tanggal, lokasi, dan informasi lainnya.</p></article>
+        <article><span>03</span><h3>Bayar & bagikan</h3><p>Setelah pembayaran terverifikasi, tautan undangan diterbitkan.</p></article>
+      </div>
+    </section>
+
+    <section class="order-section" id="order">
+      <div class="order-intro">
+        <p class="eyebrow">MULAI PESAN</p>
+        <h2>Buat undangan digitalmu.</h2>
+        <p>Isi formulir berikut. Kamu bisa melihat pratinjau sebelum membuat pesanan.</p>
+        <div class="notice">Versi demo: pembayaran disimulasikan. Belum ada uang yang ditagih.</div>
+      </div>
+      <form id="orderForm" class="order-form">
+        <label>Jenis acara
+          <select id="eventType" required>
+            <option value="">Pilih jenis acara</option>
+            <option>Pernikahan</option><option>Ulang tahun</option><option>Aqiqah</option>
+            <option>Wisuda</option><option>Khitanan</option><option>Syukuran</option><option>Acara lainnya</option>
+          </select>
+        </label>
+        <label>Nama / judul acara<input id="eventTitle" required maxlength="70" placeholder="Contoh: Pernikahan Andi & Siti"></label>
+        <div class="two-col">
+          <label>Nama penyelenggara<input id="hostName" required maxlength="80" placeholder="Nama yang mengundang"></label>
+          <label>Tanggal acara<input id="eventDate" type="date" required></label>
+        </div>
+        <div class="two-col">
+          <label>Waktu acara<input id="eventTime" type="time" required></label>
+          <label>Nama lokasi<input id="venue" required maxlength="100" placeholder="Gedung / rumah"></label>
+        </div>
+        <label>Alamat lengkap<textarea id="address" rows="3" required maxlength="300" placeholder="Alamat acara"></textarea></label>
+        <label>Link Google Maps (opsional)<input id="maps" type="url" placeholder="https://maps.google.com/..."></label>
+        <label>Pesan tambahan (opsional)<textarea id="message" rows="3" maxlength="300" placeholder="Tuliskan pesan untuk tamu"></textarea></label>
+        <label>Pilih template
+          <select id="templateSelect" required></select>
+        </label>
+        <div class="price-row"><span>Harga paket demo</span><strong id="priceText">Rp25.000</strong></div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-light" id="previewBtn">Lihat pratinjau</button>
+          <button type="submit" class="btn btn-dark">Lanjut ke pembayaran</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="admin-section" id="admin">
+      <div class="section-heading">
+        <div><p class="eyebrow">AREA DEMO</p><h2>Panel admin</h2></div>
+        <p>Untuk pengujian pesanan di perangkat ini saja.</p>
+      </div>
+      <div class="admin-box">
+        <p class="small-muted">Pesanan yang dibuat di browser ini akan tampil di bawah. Tombol verifikasi hanya simulasi, bukan pemeriksaan pembayaran sungguhan.</p>
+        <div id="adminOrders" class="admin-orders"><p>Belum ada pesanan.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#">WAYMARK<span>INVITATION</span></a><p>Undangan digital untuk setiap cerita.</p><small>© 2026 WAYMARK. Demo versi 1.</small></footer>
+
+  <dialog id="previewDialog" class="modal">
+    <button class="modal-close" data-close="previewDialog">×</button>
+    <div id="previewContent"></div>
+  </dialog>
+
+  <dialog id="paymentDialog" class="modal">
+    <button class="modal-close" data-close="paymentDialog">×</button>
+    <p class="eyebrow">CHECKOUT DEMO</p><h2>Pesanan dibuat!</h2>
+    <p id="paymentSummary"></p>
+    <div class="notice">Klik tombol di bawah untuk mensimulasikan pembayaran berhasil. Ini TIDAK melakukan transfer atau memverifikasi uang sungguhan.</div>
+    <button class="btn btn-dark full" id="simulatePayBtn">Simulasikan pembayaran berhasil</button>
+  </dialog>
+
+  <dialog id="resultDialog" class="modal">
+    <button class="modal-close" data-close="resultDialog">×</button>
+    <p class="eyebrow">PEMBAYARAN DEMO BERHASIL</p><h2>Undangan diterbitkan!</h2>
+    <p>Ini tautan demo undanganmu:</p>
+    <div class="generated-link" id="generatedLink"></div>
+    <button class="btn btn-dark full" id="copyLinkBtn">Salin tautan</button>
+    <p class="small-muted">Pada versi produksi, link ini harus berasal dari server setelah webhook payment gateway tervalidasi.</p>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
